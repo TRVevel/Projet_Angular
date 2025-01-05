@@ -1,1 +1,188 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, p, a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7f9;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(70deg, rgba(10, 10, 10, 1), rgb(1, 100, 122) 40%, rgba(50, 50, 50, 0.9) 70%);
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 16px;
+    background-color: #153b61;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #777;
+}
+
+.logout {
+    background-color: #e74c3c;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+.content {
+    margin-top: 100px; /* Décalage pour le header fixe */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-message {
+    margin-bottom: 30px;
+}
+
+.welcome-message h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.welcome-message p {
+    font-size: 14px;
+    color: black;
+}
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+.stat {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.stat p {
+    font-size: 48px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.footer-container p {
+    font-size: 14px;
+}

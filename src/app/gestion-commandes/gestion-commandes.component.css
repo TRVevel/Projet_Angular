@@ -1,21 +1,38 @@
 header{
-    
     background-color: #333;
+    font-size: 0.8rem;
+    min-width: 100vw;
+    position: fixed;
+    padding: 0;
+    top:0;
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
 }
-app-carte-commande{
-    max-width: 100vw;
-    background-color: brown;
+nav{
     display: flex;
 }
-footer{
-    margin-top: 15%;
-    margin-bottom: 0px;
-    background-color: #333;
+nav a{
     color: white;
-    text-align: center;
-    padding: 10px;
+    text-decoration: none;
+    padding: 20px;
+    background-color: grey;
+    border: #333 solid 1px;
+}
+app-carte-commande{
+    margin-top: 100px;
+    max-width: 100vw;
+    background-color: rgb(82, 143, 235);
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+footer{  
+    background-color: #333;
+    font-size: 0.8rem;
+    min-width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom:0;
+    color: white;
 }

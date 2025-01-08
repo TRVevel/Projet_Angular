@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,8 @@ export class LoginComponent {
     if (this.username && this.password) {
       console.log('Utilisateur:', this.username);
       console.log('Mot de passe:', this.password);
+      this.router.navigate(["/dashboard"])
+   
     } else {
       console.log('Veuillez renseigner tous les champs.');
     }

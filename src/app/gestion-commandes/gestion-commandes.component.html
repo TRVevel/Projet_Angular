@@ -6,11 +6,12 @@
         <a href="#">Commandes</a>
         <a href="#">LogOut</a>
     </nav>
-    <p>User:</p>
+    <p>User: 1</p>
 </header>
 <p>gestion-commandes works!</p>
 <main>
-<app-carte-commande></app-carte-commande>
+<app-carte-commande class="customerList" *ngFor="let order of orderList" [order]="order">
+    ></app-carte-commande>
 </main>
 <footer>
     <p>&copy; Quentin, Mohammed, Amadou</p>

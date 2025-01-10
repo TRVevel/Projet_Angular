@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Order } from '../models/Order';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-carte-commande',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './carte-commande.component.css'
 })
 export class CarteCommandeComponent {
-
+  @Input() order!: Order;
+  @Input() product!: Product;
 }

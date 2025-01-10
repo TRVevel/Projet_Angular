@@ -1,64 +1,16 @@
 <!-- Premiere carte de commande -->
 <div class="carteCommande">
-    <p>Numéro Commande:1</p>
+    <p>Numéro Commande:{{order.id}}</p>
     <div class="InfoProduit">
-    <a>Nom produit:</a>
-    <p>Prix:</p>
-    <p>Nombre en stock:</p>
+    <a href="#">{{order.productId}}</a>
+    <p>Prix: 5€</p>
+    <p>Nombre en stock: 35</p>
 </div>
 <div class="InfoClient">
-    <p>Date de commande:</p>
-    <a>Nom client:</a>
-    <p>Adresse Livraison:</p>
-    <p>Quantité Commandé:</p> 
+    <p>Date de commande: {{order.createdAt}}</p>
+    <a href="#">Nom client: Jean Dupont</a>
+    <p>Adresse Livraison: 12 rue des Lilas, Paris, France</p>
+    <p>Quantité Commandé: {{order.quantity}}</p> 
 </div>
-<a>Modifier</a>
-</div>
-<!-- Deuxième carte de commande -->
-<div class="carteCommande">
-    <p>Numéro Commande:2</p>
-    <div class="InfoProduit">
-    <a>Nom produit:</a>
-    <p>Prix:</p>
-    <p>Nombre en stock:</p>
-</div>
-<div class="InfoClient">
-    <p>Date de commande:</p>
-    <a>Nom client:</a>
-    <p>Adresse Livraison:</p>
-    <p>Quantité Commandé:</p>
-</div>
-<a>Modifier</a>
-</div>
-<!-- Troisième carte de commande -->
-<div class="carteCommande">
-    <p>Numéro Commande:3</p>
-    <div class="InfoProduit">
-    <a>Nom produit:</a>
-    <p>Prix:</p>
-    <p>Nombre en stock:</p>
-</div>
-<div class="InfoClient">
-    <p>Date de commande:</p>
-    <a>Nom client:</a>
-    <p>Adresse Livraison:</p>
-    <p>Quantité Commandé:</p>
-</div>
-<a>Modifier</a>
-</div>
-<!-- Quatrième carte de commande -->
-<div class="carteCommande">
-    <p>Numéro Commande:4</p>
-    <div class="InfoProduit">
-    <a>Nom produit:</a>
-    <p>Prix:</p>
-    <p>Nombre en stock:</p>
-</div>
-<div class="InfoClient">
-    <p>Date de commande:</p>
-    <a>Nom client:</a>
-    <p>Adresse Livraison:</p>
-    <p>Quantité Commandé:</p>
-</div>
-<a>Modifier</a>
+<a href="#">Modifier</a>
 </div>

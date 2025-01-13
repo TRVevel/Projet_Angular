@@ -4,6 +4,7 @@ import { RequetesApiService } from '../services/requetes-api.service';
 import { CommonModule } from '@angular/common';
 import { Order } from '../models/Order';
 import { Product } from '../models/Product';
+import { Customer } from '../models/Customer';
 
 @Component({
   selector: 'app-gestion-commandes',
@@ -14,10 +15,12 @@ import { Product } from '../models/Product';
 export class GestionCommandesComponent {
   orderList!: Order[]
   productList!: Product[]
+  customerList!: Customer[];
 
   constructor(private requetesApiService: RequetesApiService) {
     this.orderList = [];
     this.productList = [];
+    this.customerList=[];
    }
   ngOnInit() {
     let authBody = {"username": "admin", "password": "pwd" };
@@ -26,15 +29,17 @@ export class GestionCommandesComponent {
       localStorage.setItem("token", value.token)
 
       this.requetesApiService.getOrders().subscribe((value)=>{
-        console.log(value);
         this.orderList = value.map((order: any) => new Order(order.id, order.productId, order.quantity, order.userId, order.createdAt));
         console.log(this.orderList);
-
-        this.requetesApiService.getProduct().subscribe((value)=>{
-          console.log(value);
-          this.productList = value.map((product: any) => new Product(product.id, product.name, product.price, product.stock));
-          console.log(this.productList);
       })
+        this.requetesApiService.getProduct().subscribe((value)=>{
+          this.productList = value.map((product: any) => new Product(product.id, product.name, product.stock));
+          console.log(this.productList);
+      
+    })
+    this.requetesApiService.getCustomers().subscribe((value)=>{
+      this.customerList = value.map((customer: any) => new Customer(customer.id, customer.name, customer.email, customer.phone, customer.adress, customer.orders));
+      console.log(this.customerList);
     });
   }
 )}

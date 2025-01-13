@@ -5,7 +5,7 @@ export class Order {
     userId: number;
     createdAt: any;
 
-    logCustomerInfos(): void {
+    logOrderInfos(): void {
         console.log(this.id + " " + this.productId + " " + this.quantity + " " + this.userId + " " + this.createdAt);
     }
 

@@ -1,4 +1,5 @@
 <!-- Premiere carte de commande -->
+ 
 <div class="carteCommande">
     <p>Numéro Commande:{{order.id}}</p>
     <div class="InfoProduit">
@@ -8,7 +9,7 @@
 <div class="InfoClient">
     <p>Date de commande: {{order.createdAt}}</p>
     <a href="#">Nom client: {{customerRelier?.name}}</a>
-    <p>Adresse Livraison:{{customerRelier?.adress}}</p>
+    <p>Adresse Livraison:{{customerRelier?.address}}</p>
     <p>Quantité Commandé: {{order.quantity}}</p> 
 </div>
 <a href="#">Modifier</a>

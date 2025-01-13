@@ -10,7 +10,7 @@
 </header>
 <p>gestion-commandes works!</p>
 <main>
-    <div *ngIf="orderList.length && productList.length && customerList.length; else loading">
+    <div id="allCarte" *ngIf="orderList.length && productList.length && customerList.length; else loading">
     <!-- Your existing content that depends on orderList and productList -->
     <app-carte-commande *ngFor="let order of orderList" [order]="order" [product]="productList" [customer]="customerList"></app-carte-commande>
   </div>

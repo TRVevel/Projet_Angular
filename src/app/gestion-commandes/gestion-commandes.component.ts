@@ -38,7 +38,7 @@ export class GestionCommandesComponent {
       
     })
     this.requetesApiService.getCustomers().subscribe((value)=>{
-      this.customerList = value.map((customer: any) => new Customer(customer.id, customer.name, customer.email, customer.phone, customer.adress, customer.orders));
+      this.customerList = value.map((customer: any) => new Customer(customer.id, customer.name, customer.email, customer.phone, customer.address, customer.orders));
       console.log(this.customerList);
     });
   }

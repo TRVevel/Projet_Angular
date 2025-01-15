@@ -1,15 +1,17 @@
 <header>
-    <h1>Revenir en arrière</h1>
+    <h1><a href="./commandes">Revenir en arrière</a></h1>
     <nav>
+        
+    <a href="./formulaire" (click)="onCreerClick($event)">Créer</a>
         <a href="#">Clients</a>
         <a href="#">Produits</a>
         <a href="#">Commandes</a>
         <a href="#">LogOut</a>
     </nav>
-    <a href="./formulaire" (click)="onCreerClick($event)">Créer</a>
     <p>User: 1</p>
 </header>
-<form [ngClass]="{'hidden': !isCreateFormVisible}">
+<form class=" block shadow" [ngClass]="{'hidden': !isCreateFormVisible}">
+    <div>
     <h1>Créer</h1>
     <div>
         <label for="customerName">Nom du client:</label>
@@ -27,10 +29,13 @@
         <label for="orderAmount">Quantité commander:</label>
         <input type="number" id="orderAmount" name="orderAmount" required>
     </div>
+</div>
     <button type="submit">Créer la commande</button>
+    
 </form>
 
-<form [ngClass]="{'hidden': !isModifierFormVisible}">
+<form class=" block shadow" [ngClass]="{'hidden': !isModifierFormVisible}">
+    <div>
     <h1>Modifier</h1>
     <div>
         <label for="customerName">Nom du client: </label>
@@ -52,6 +57,8 @@
         <label for="orderAmount">Quantité commander:</label>
         <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="quantity" required>
     </div>
+</div>
+    
     <button type="submit">Modifier la commande</button>
 </form>
 <footer>

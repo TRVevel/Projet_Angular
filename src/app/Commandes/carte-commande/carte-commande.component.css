@@ -1,79 +1,32 @@
+
 .carteCommande{
     
-    width: 800px;
+    width: 900px;
     height: 200px;
     display: flex;
     background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 18px;
 }
-.block {
-    margin: 10px;
-    position: relative;
-    width: 820px;
-    height: 220px;
-    background: linear-gradient(0deg, #000, #262626);
-    border-radius: 10px;
-  }
-  
-  .shadow:hover {
-    
-    &:before, &:after {
-      content:'';
-      position: absolute;
-      top:-2px;
-      left:-2px;
-      width:calc(100% + 4px);
-      height:calc(100% + 4px);
-      background: linear-gradient(
-        45deg, 
-        #ffffff, 
-        #000000, 
-        #ffffff, 
-        #000000, 
-        #ffffff, 
-        #000000, 
-        #ffffff, 
-        #000000, 
-        #ffffff, 
-        #000000
-      );
-      border-radius: 10px;
-      background-size: 400%;
-      z-index:-1;
-      animation: shadow 20s linear infinite;
-    }
-    
-    &:after {
-      top:-8px;
-      left:-8px;
-      width:calc(100% + 16px);
-      height:calc(100% + 16px);    
-      filter:blur(24px);
-      opacity:0.9;
-    }
-    
-  }
-  
-  @keyframes shadow {
-    0% {
-      background-position: 0 0;
-    }
-    50.01% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-.carteCommande a{
-    color: black;
-}
+
 .InfoProduit{
+  flex: 1.5;
     margin-top: 18px;
 }
+p > a{
+  color: black;
+  }
 .InfoClient{
+  flex: 2;
     color: black;
+}
+.lienModifier{
+  width: 80px;
+  text-decoration: none;
+  color: white;
+  border-radius: 0 10px 10px 0;
+  background-color: #333;
+  align-content: center;
+  text-align: center;
 }

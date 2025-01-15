@@ -1,0 +1,33 @@
+header{
+    background-color: #333;
+    font-size: 0.8rem;
+    min-width: 100vw;
+    padding: 0;
+    top:0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    display: flex;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    background-color: grey;
+    border: #333 solid 1px;
+}
+
+.hidden{
+    display: none;
+}
+footer{  
+    background-color: #333;
+    font-size: 0.8rem;
+    min-width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom:0;
+    color: white;
+}

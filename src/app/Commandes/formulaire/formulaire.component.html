@@ -1,4 +1,15 @@
-<form>
+<header>
+    <h1>Revenir en arrière</h1>
+    <nav>
+        <a href="#">Clients</a>
+        <a href="#">Produits</a>
+        <a href="#">Commandes</a>
+        <a href="#">LogOut</a>
+    </nav>
+    <a href="./formulaire" (click)="onCreerClick($event)">Créer</a>
+    <p>User: 1</p>
+</header>
+<form [ngClass]="{'hidden': !isCreateFormVisible}">
     <h1>Créer</h1>
     <div>
         <label for="customerName">Nom du client:</label>
@@ -19,27 +30,30 @@
     <button type="submit">Créer la commande</button>
 </form>
 
-<form>
+<form [ngClass]="{'hidden': !isModifierFormVisible}">
     <h1>Modifier</h1>
     <div>
-        <label for="customerName">Nom du client:</label>
-        <input type="text" id="customerName" name="customerName" required>
+        <label for="customerName">Nom du client: </label>
+        <input type="text" id="customerName" name="customerName" [(ngModel)]="name" required>
     </div>
     <div>
         <label for="customerAddress">Adresse du client:</label>
-        <input type="text" id="customerAddress" name="customerAddress" required>
+        <input type="text" id="customerAddress" name="customerAddress" [(ngModel)]="address" required>
     </div>
     <div>
         <label for="orderDate">Date de commande:</label>
-        <input type="date" id="orderDate" name="orderDate" required>
+        <input type="datetime-local" id="orderDate" name="orderDate" [(ngModel)]="selectedDatetime" required>
     </div>
     <div>
         <label for="orderedProduct">Produit Commander:</label>
-        <input type="text" id="orderedProduct" name="orderedProduct" required>
+        <input type="text" id="orderedProduct" name="orderedProduct" [(ngModel)]="product" required>
     </div>
     <div>
         <label for="orderAmount">Quantité commander:</label>
-        <input type="number" id="orderAmount" name="orderAmount" required>
+        <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="quantity" required>
     </div>
     <button type="submit">Modifier la commande</button>
 </form>
+<footer>
+    <p>&copy; Quentin, Mohammed, Amadou</p>
+</footer>

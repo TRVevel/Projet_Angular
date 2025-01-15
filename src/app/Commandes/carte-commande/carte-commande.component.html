@@ -1,16 +1,24 @@
-<!-- Premiere carte de commande -->
- 
+<div class="block shadow">
 <div class="carteCommande">
-    <p>Numéro Commande:{{order.id}}</p>
+    <p>Numéro de commande:{{order.id}}</p>
     <div class="InfoProduit">
-    <a href="#" >nom produit: {{productRelier?.name}}</a>
+    <a href="#" >Nom du produit: {{productRelier?.name}}</a>
     <p>Nombre en stock: {{productRelier?.stock}} </p>
 </div>
 <div class="InfoClient">
     <p>Date de commande: {{order.createdAt}}</p>
-    <a href="#">Nom client: {{customerRelier?.name}}</a>
-    <p>Adresse Livraison:{{customerRelier?.address}}</p>
-    <p>Quantité Commandé: {{order.quantity}}</p> 
+    <p>Nom du client:<a ref="#"> {{customerRelier?.name}}</a></p>
+    <p>Adresse de livraison:{{customerRelier?.address}}</p>
+    <p>Quantité commandé: {{order.quantity}}</p> 
 </div>
-<a href="./formulaire">Modifier</a>
+<a href="" target="_blank" (click)="onModifierClick(
+    order.id, 
+    order.quantity, 
+    order.createdAt, 
+    customerRelier?.name,
+    customerRelier?.address,
+    productRelier?.name,
+    $event
+    )" class="lienModifier">Modifier</a>
+</div>
 </div>

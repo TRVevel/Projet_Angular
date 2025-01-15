@@ -41,6 +41,17 @@ export class GestionCommandesComponent {
       this.customerList = value.map((customer: any) => new Customer(customer.id, customer.name, customer.email, customer.phone, customer.address, customer.orders));
       console.log(this.customerList);
     });
+    
   }
+  
 )}
+onCreerClick(
+  event: Event
+) {
+  event.preventDefault(); // Empêche le comportement par défaut
+  let whereClick: number = 0; // Vous pouvez définir d'autres valeurs si nécessaire
+  const url = `formulaire?formu=${whereClick}`;
+  window.open(url, '_blank');
+  console.log(`Lien Creer cliqué`);
+}
 }

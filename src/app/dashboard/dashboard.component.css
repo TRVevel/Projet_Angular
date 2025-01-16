@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, p, a {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f7f9;
+    background-color: #71860f;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -72,6 +72,35 @@ nav a:hover {
     background-color: rgb(205, 178, 178);
 }
 
+.dashboard {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .stat-section {
+    width: 48%;
+    border: 1px solid #ccc9c9;
+    background-color: rgb(225, 221, 221);
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 2);
+  }
+  
+  .stat-section h2 {
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+
+/* 
 .stats-container {
     display: flex;
     justify-content: space-around;
@@ -99,7 +128,7 @@ nav a:hover {
     font-size: 48px;
     font-weight: bold;
     color: #007bff;
-}
+} */
 
 footer {
     position: fixed;

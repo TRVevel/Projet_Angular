@@ -1,0 +1,10 @@
+<div class="customer-list">
+    <button (click)="addCustomer()">Ajouter un client</button>
+    <ul>
+      <li *ngFor="let customer of customers">
+        <span>{{ customer.name }} - {{ customer.email }}</span>
+        <button (click)="editCustomer(customer.id)">Modifier</button>
+        <button (click)="deleteCustomer(customer.id)">Supprimer</button>
+      </li>
+    </ul>
+  </div>

@@ -1,3 +1,4 @@
+
 <header>
     <div class="header-container">
         <h2>ERP QAM</h2>
@@ -14,24 +15,29 @@
 </header>
 
 <!-- Contenu principal -->
-<div class="content">
-    <div class="welcome-message">
-        <h2>Bienvenue dans votre ERP</h2>
-        <p>Statistiques des commandes</p>
-    </div>
 
-    <div class="stats-container">
-        <div class="stat">
-            <h3>Nombre total de commandes par client</h3>
-            <p>45</p> <!-- Exemple de données -->
-        </div>
+<div class="dashboard">
 
-        <div class="stat">
-            <h3>Nombre total de commandes par produit</h3>
-            <p>120</p> <!-- Exemple de données -->
-        </div>
+    <div class="stat-section">
+      <h2>Nombre total de commandes par client</h2>
+      <ul>
+        <li *ngFor="let customer of customers">
+          Client ID: {{ customer.id }} {{ customer.name }}- Nombre de commandes: {{ calculateOrdersByCustomer(customer)}}
+        </li>
+      </ul>
     </div>
-</div>
+  
+    <div class="stat-section">
+      <h2>Nombre total de commandes par produit</h2>
+      <ul>
+        
+        <li *ngFor="let order of orders">
+          Produit ID: {{ order.productId }} - Quantité commandée: {{ getOrdersForProduct(+order.productId) }}
+        </li>
+       
+      </ul>
+    </div>
+  </div>
 
 <!-- Footer fixe -->
 <footer>

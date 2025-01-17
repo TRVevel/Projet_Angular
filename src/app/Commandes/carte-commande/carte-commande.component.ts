@@ -33,15 +33,17 @@ export class CarteCommandeComponent {
     orderId: number,
     orderQuantity: number,
     orderDate: Date, 
+    customerId: number | undefined, 
     customerName: string|undefined, 
     customerAddress: string, 
+    productId: number|undefined,
     productName: string|undefined, 
     event: Event
   ): void {
     event.preventDefault(); // Empêche le comportement par défaut
     let whereClick: number = 1; // Vous pouvez définir d'autres valeurs si nécessaire
     
-    const url = `formulaire?formu=${whereClick}&id=${orderId}&quantity=${orderQuantity}&date=${orderDate}&name=${customerName}&address=${customerAddress}&product=${productName}`;
+    const url = `formulaire?formu=${whereClick}&id=${orderId}&quantity=${orderQuantity}&date=${orderDate}&customerId=${customerId}&name=${customerName}&address=${customerAddress}&productId=${productId}&productName=${productName}`;
     window.open(url, '_blank');
     console.log(`Lien cliqué pour l'ID : ${orderId}`);
   }

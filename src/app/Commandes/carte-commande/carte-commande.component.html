@@ -14,9 +14,11 @@
 <a href="" target="_blank" (click)="onModifierClick(
     order.id, 
     order.quantity, 
-    order.createdAt, 
+    order.createdAt,
+    customerRelier?.id, 
     customerRelier?.name,
     customerRelier?.address,
+    productRelier?.id,
     productRelier?.name,
     $event
     )" class="lienModifier">Modifier</a>

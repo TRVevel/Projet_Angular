@@ -1,8 +1,7 @@
 <header>
     <h1><a href="./commandes">Revenir en arrière</a></h1>
     <nav>
-        
-    <a href="./formulaire" (click)="onCreerClick($event)">Créer</a>
+        <a href="./formulaire" (click)="onCreerClick($event)">Créer</a>
         <a href="#">Clients</a>
         <a href="#">Produits</a>
         <a href="#">Commandes</a>
@@ -10,57 +9,52 @@
     </nav>
     <p>User: 1</p>
 </header>
-<form class=" block shadow" [ngClass]="{'hidden': !isCreateFormVisible}">
+
+<!-- Formulaire de création -->
+<form [formGroup]="createOrderForm" class="block shadow" [ngClass]="{'hidden': !isCreateFormVisible}" (ngSubmit)="onCreateSubmit()">
     <div>
-    <h1>Créer</h1>
-    <div>
-        <label for="customerName">Nom du client:</label>
-        <input type="text" id="customerName" name="customerName" required>
+        <h2>Créer une commande</h2>
     </div>
     <div>
-        <label for="customerAddress">Adresse du client:</label>
-        <input type="text" id="customerAddress" name="customerAddress" required>
+        <label for="customerId">Id du client:</label>
+        <input type="number" id="customerId" name="customerId" formControlName="customerId" required>
     </div>
     <div>
-        <label for="orderedProduct">Produit Commander:</label>
-        <input type="text" id="orderedProduct" name="orderedProduct" required>
+        <label for="orderedProduct">Id du produit Commandé:</label>
+        <input type="number" id="orderedProduct" name="orderedProduct" formControlName="productId" required>
     </div>
     <div>
-        <label for="orderAmount">Quantité commander:</label>
-        <input type="number" id="orderAmount" name="orderAmount" required>
+        <label for="orderAmount">Quantité commandée:</label>
+        <input type="number" id="orderAmount" name="orderAmount" formControlName="quantity" required>
     </div>
-</div>
-    <button type="submit">Créer la commande</button>
-    
+    <div *ngIf="createErrorMessage" class="error">{{ createErrorMessage }}</div>
+    <div *ngIf="createSuccessMessage" class="success">{{ createSuccessMessage }}</div>
+    <button type="submit" [disabled]="createOrderForm.invalid">Créer</button>
 </form>
 
-<form class=" block shadow" [ngClass]="{'hidden': !isModifierFormVisible}">
+<!-- Formulaire de modification -->
+<form [formGroup]="editOrderForm" class="block shadow" [ngClass]="{'hidden': !isModifierFormVisible}" (ngSubmit)="onEditSubmit()">
     <div>
-    <h1>Modifier</h1>
-    <div>
-        <label for="customerName">Nom du client: </label>
-        <input type="text" id="customerName" name="customerName" [(ngModel)]="name" required>
+        <h2>Modifier une commande</h2>
     </div>
     <div>
-        <label for="customerAddress">Adresse du client:</label>
-        <input type="text" id="customerAddress" name="customerAddress" [(ngModel)]="address" required>
+        <label for="customerId">Id du client:</label>
+        <input type="number" id="customerId" name="customerId" formControlName="customerId" required>
     </div>
     <div>
-        <label for="orderDate">Date de commande:</label>
-        <input type="datetime-local" id="orderDate" name="orderDate" [(ngModel)]="selectedDatetime" required>
+        <label for="orderedProduct">Id du produit Commandé:</label>
+        <input type="number" id="orderedProduct" name="orderedProduct" formControlName="productId" required>
     </div>
     <div>
-        <label for="orderedProduct">Produit Commander:</label>
-        <input type="text" id="orderedProduct" name="orderedProduct" [(ngModel)]="product" required>
+        <label for="orderAmount">Quantité commandée:</label>
+        <input type="number" id="orderAmount" name="orderAmount" formControlName="quantity" required>
     </div>
-    <div>
-        <label for="orderAmount">Quantité commander:</label>
-        <input type="number" id="orderAmount" name="orderAmount" [(ngModel)]="quantity" required>
-    </div>
-</div>
-    
-    <button type="submit">Modifier la commande</button>
+    <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
+    <div *ngIf="editSuccessMessage" class="success">{{ editSuccessMessage }}</div>
+    <button type="submit" [disabled]="editOrderForm.invalid">Modifier</button>
+    <button type="button" (click)="onCancelOrder()" class="cancel-button">Annuler la commande</button>
 </form>
+
 <footer>
     <p>&copy; Quentin, Mohammed, Amadou</p>
 </footer>

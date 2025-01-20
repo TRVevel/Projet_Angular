@@ -5,7 +5,7 @@
         <!-- Menu de navigation -->
         <nav>
             <a href="#">Gestion produits</a>
-            <a href="#">Gestion clients</a>
+            <a href="customers">Gestion clients</a>
             <a href="#">Gestion commandes</a>
             <a href="#">Gestion utilisateurs</a>
             
@@ -31,8 +31,8 @@
       <h2>Nombre total de commandes par produit</h2>
       <ul>
         
-        <li *ngFor="let order of orders">
-          Produit ID: {{ order.productId }} - Quantité commandée: {{ getOrdersForProduct(+order.productId) }}
+        <li *ngFor="let productId of objectKeys(ordersByProduct)">
+          Produit ID: {{ productId }} - Nombre de commandes: {{ ordersByProduct[+productId] }}
         </li>
        
       </ul>

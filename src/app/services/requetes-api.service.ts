@@ -111,4 +111,29 @@ export class RequetesApiService {
     const headers = { Authorization: this.token };
     return this.httpClient.delete(`${this.baseUrl}/orders/${orderId}`, { headers });
   }
+   // Méthodes pour les produits
+   createProduct(productData: any): Observable<any> {
+    this.ensureToken();
+    const headers = { Authorization: this.token };
+    return this.httpClient.post<any>(`${this.baseUrl}/products`, productData, { headers });
+  }
+
+  updateProduct(productId: number, productData: any): Observable<any> {
+    this.ensureToken();
+    const headers = { Authorization: this.token };
+    return this.httpClient.put<any>(`${this.baseUrl}/products/${productId}`, productData, { headers });
+  }
+
+  deleteProduct(productId: number): Observable<any> {
+    this.ensureToken();
+    const headers = { Authorization: this.token };
+    return this.httpClient.delete<any>(`${this.baseUrl}/products/${productId}`, { headers });
+  }
+
+  // Utilitaires
+  private ensureToken(): void {
+    if (!this.token) {
+      throw new Error('No authentication token');
+    }
+  }
 }

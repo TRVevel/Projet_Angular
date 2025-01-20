@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CarteCommandeComponent } from "../carte-commande/carte-commande.component";
-import { RequetesApiService } from '../services/requetes-api.service';
 import { CommonModule } from '@angular/common';
-import { Order } from '../models/Order';
-import { Product } from '../models/Product';
-import { Customer } from '../models/Customer';
+import { Order } from '../../models/Order';
+import { Product } from '../../models/Product';
+import { Customer } from '../../models/Customer';
+import { RequetesApiService } from '../../services/requetes-api.service';
 
 @Component({
   selector: 'app-gestion-commandes',

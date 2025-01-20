@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RequetesApiService } from '../services/requetes-api.service';
 import { catchError, of, switchMap } from 'rxjs';
+import { RequetesApiService } from '../../services/requetes-api.service';
 
 @Component({
   selector: 'app-formulaire',

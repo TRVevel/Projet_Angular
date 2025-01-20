@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Order } from '../models/Order';
-import { Product } from '../models/Product';
-import { Customer } from '../models/Customer';
+import { Order } from '../../models/Order';
+import { Product } from '../../models/Product';
+import { Customer } from '../../models/Customer';
 
 @Component({
   selector: 'app-carte-commande',

@@ -17,6 +17,7 @@ video {
     bottom:0;
   }
   header{
+    z-index: 20;
     background-color: #333;
     font-size: 0.8rem;
     min-width: 100vw;
@@ -49,7 +50,7 @@ nav a{
   .block {
     margin: 0 10px;
     position: relative;
-    width: 900px;
+    width: auto;
     height: 200x;
     background-color: #333;
     border-radius: 10px;

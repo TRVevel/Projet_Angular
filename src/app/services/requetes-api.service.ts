@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Customer } from '../models/Customer';
 
 @Injectable({
   providedIn: 'root'
@@ -89,13 +90,22 @@ export class RequetesApiService {
     const headers= {Authorization:this.token};
     return this.httpClient.put(`${this.baseUrl}/customers/${customerId}`, customer, {headers});
   }
-
+  createCustomer(customerData: any): Observable<any> {
+    this.ensureToken();
+    const headers = { Authorization: this.token };
+    return this.httpClient.post<any>(`${this.baseUrl}/customers`, customerData, { headers });
+  }
   updateCustomer(customerId: number, customer: any): Observable<any> {
     if(!this.token) {
       throw new Error('No authentification');
     }
     const headers= {Authorization:this.token};
     return this.httpClient.put(`${this.baseUrl}/customers/${customerId}`, customer, {headers});
+  }
+  deleteCustomer(customerId: number): Observable<any> {
+    this.ensureToken();
+    const headers = { Authorization: this.token };
+    return this.httpClient.delete<any>(`${this.baseUrl}/customers/${customerId}`, { headers });
   }
   updateProductStock(productId: number, updatedProduct: any): Observable<any> {
     if(!this.token) {

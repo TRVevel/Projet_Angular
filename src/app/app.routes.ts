@@ -3,6 +3,8 @@ import { GestionCommandesComponent } from './Commandes/gestion-commandes/gestion
 import { FormulaireComponent } from './Commandes/formulaire/formulaire.component';
 import { GestionProduitsComponent } from './Produits/gestion-produits/gestion-produits.component';
 import { FormulaireProduitComponent } from './Produits/formulaire-produit/formulaire-produit.component';
+import { GestionClientsComponent } from './Clients/gestion-clients/gestion-clients.component';
+import { FormulaireClientComponent } from './Clients/formulaire-client/formulaire-client.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +27,18 @@ export const routes: Routes = [
     {
         path:'formulaire-produit',
         component: FormulaireProduitComponent,
+        pathMatch: 'full'
+
+    },
+    {
+        path:'clients',
+        component: GestionClientsComponent,
+        pathMatch: 'full'
+
+    },
+    {
+        path:'formulaire-client',
+        component: FormulaireClientComponent,
         pathMatch: 'full'
 
     },

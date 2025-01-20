@@ -2,7 +2,7 @@
     <h1><a href="./produits">Revenir en arrière</a></h1>
     <nav>
         <a href="./formulaire-produit" (click)="onCreerClick($event)">Créer un produit</a>
-        <a href="#">Clients</a>
+        <a href="./clients">Clients</a>
         <a href="./produits">Produits</a>
         <a href="./commandes">Commandes</a>
         <a href="#">LogOut</a>
@@ -44,7 +44,7 @@
     <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
     <div *ngIf="editSuccessMessage" class="success">{{ editSuccessMessage }}</div>
     <button type="submit" [disabled]="editProductForm.invalid">Modifier</button>
-    <button type="button" (click)="onCancelProduct()" class="cancel-button">Annuler le produit</button>
+    <button type="button" (click)="onDelProduct()" class="del-button">Supprimer le produit</button>
 </form>
 
 <footer>

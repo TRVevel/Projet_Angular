@@ -124,7 +124,7 @@ export class FormulaireProduitComponent implements OnInit {
       this.editProductForm.reset();
     });
   }
-  onCancelProduct(): void {
+  onDelProduct(): void {
     const productId = this.editProductForm.get('productId')?.value;
   
     if (!productId) {

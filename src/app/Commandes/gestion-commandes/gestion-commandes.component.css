@@ -17,3 +17,7 @@ footer{
     bottom:0;
     color: white;
 }
+a{
+    color: white;
+    text-decoration: none;
+}

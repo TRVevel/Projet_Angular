@@ -26,6 +26,12 @@ export class CarteCommandeComponent {
     }
     console.log(this.productRelier)
     this.customerRelier = this.customer.find((customer) => customer.orders.includes(this.order.id));
+    if(this.customerRelier === undefined) {
+      console.log('Client non trouvé');
+    }else {
+      this.customerRelier
+      console.log('Produit trouvé');
+    }
     console.log(this.customerRelier);
     
   }

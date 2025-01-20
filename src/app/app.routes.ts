@@ -5,8 +5,19 @@ import { GestionProduitsComponent } from './Produits/gestion-produits/gestion-pr
 import { FormulaireProduitComponent } from './Produits/formulaire-produit/formulaire-produit.component';
 import { GestionClientsComponent } from './Clients/gestion-clients/gestion-clients.component';
 import { FormulaireClientComponent } from './Clients/formulaire-client/formulaire-client.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        component: LoginComponent,
+        pathMatch: 'full'
+    },
+    {
+        path: 'dashboard',
+        component: DashboardComponent
+    },
     {
         path:'commandes',
         component: GestionCommandesComponent,

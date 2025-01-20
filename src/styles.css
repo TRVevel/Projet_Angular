@@ -47,6 +47,11 @@ nav a{
     border-right: 1px solid #333; /* Bordure en haut */
     border-left: 1px solid #333; /* Bordure en bas */
 }
+nav a:hover{
+  
+  background-color: rgb(200, 200, 200); 
+  
+}
   .block {
     margin: 0 10px;
     position: relative;
